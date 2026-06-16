@@ -6,7 +6,7 @@ public class AccountStatusCalculator {
         INACTIVE, DORMANT, ACTIVE
     }
 
-    public String statusSinceLastLogin(int daysSinceLastLogin) {
+    public String statusNameSinceLastLogin(int daysSinceLastLogin) {
         if (daysSinceLastLogin > 365) {
             return AccountStatus.INACTIVE.name();
         } else if (daysSinceLastLogin > 30) {
