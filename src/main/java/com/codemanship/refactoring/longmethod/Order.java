@@ -18,7 +18,7 @@ public class Order {
 
         double subtotal = calculateSubtotal();
 
-        double discount = calculateDiscount(subtotal);
+        double discount = customer.calculateDiscount(subtotal);
 
         double taxableAmount = subtotal - discount;
         double tax = calculateTax(taxableAmount);
@@ -34,16 +34,6 @@ public class Order {
 
     private static double calculateTax(double taxableAmount) {
         return taxableAmount * 0.20;
-    }
-
-    private double calculateDiscount(double subtotal) {
-        double discount = 0.0;
-        if (customer.isLoyal()) {
-            discount = subtotal * 0.10;
-        } else if (subtotal > 100) {
-            discount = subtotal * 0.05;
-        }
-        return discount;
     }
 
     private double calculateSubtotal() {
