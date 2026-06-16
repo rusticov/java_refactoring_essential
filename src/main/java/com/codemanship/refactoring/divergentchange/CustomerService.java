@@ -10,7 +10,7 @@ public class CustomerService {
     }
 
     public String formatDisplayName(String firstName, String lastName) {
-        return customerNameFormatter.formatDisplayName(firstName, lastName);
+        return customerNameFormatter.format(firstName, lastName);
     }
 
     public int calculateLoyaltyPoints(int numberOfPurchases) {
