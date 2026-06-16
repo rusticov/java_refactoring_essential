@@ -5,10 +5,10 @@ public class X1 {
     static int m(int lowerBound, int upperBound) {
         int p = 0;
 
-        p = sumSquaresBetweenBounds(lowerBound, upperBound, p);
+        int result = sumSquaresBetweenBounds(lowerBound, upperBound, p);
 
         // Return accumulated sum
-        return p;
+        return result;
     }
 
     private static int sumSquaresBetweenBounds(int q, int z, int p) {
