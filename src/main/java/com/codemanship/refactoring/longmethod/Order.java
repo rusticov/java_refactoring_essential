@@ -18,7 +18,6 @@ public class Order {
 
         double subtotal = calculateSubtotal();
 
-        // Discount rules
         double discount = calculateDiscount(subtotal);
 
         // Tax calculation
@@ -29,11 +28,6 @@ public class Order {
         double total = taxableAmount + tax;
 
         return new OrderSummary(subtotal, discount, tax, total);
-    }
-
-    private double calculateTax(double subtotal, double discount) {
-        double taxableAmount = subtotal - discount;
-        return taxableAmount * 0.20;
     }
 
     private double calculateDiscount(double subtotal) {
