@@ -10,11 +10,7 @@ public class X1Test {
         int a = 7;
         int b = 12;
 
-        // Expected: sum of squares from 7 to 12
-        int expected = 0;
-        for (int i = a; i <= b; i++) {
-            expected += i * i;
-        }
+        int expected = 7*7 + 8*8 + 9*9 + 10*10 + 11*11 + 12*12;
 
         int actual = X1.sumSquaresBetweenBounds(a, b);
 
