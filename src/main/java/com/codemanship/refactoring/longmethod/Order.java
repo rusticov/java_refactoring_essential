@@ -39,9 +39,13 @@ public class Order {
     private double calculateSubtotal() {
         double subtotal = 0.0;
         for (OrderItem item : items) {
-            subtotal += item.getPrice() * item.getQuantity();
+            subtotal += itemSubtotal(item);
         }
         return subtotal;
+    }
+
+    private static double itemSubtotal(OrderItem item) {
+        return item.getPrice() * item.getQuantity();
     }
 
     private void validateItems() {
