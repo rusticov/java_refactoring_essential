@@ -11,7 +11,7 @@ public class X1 {
         return result;
     }
 
-    static int square(int k) {
-        return k * k;
+    static int square(int value) {
+        return value * value;
     }
 }
