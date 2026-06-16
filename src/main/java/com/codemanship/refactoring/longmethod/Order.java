@@ -4,6 +4,8 @@ import java.util.List;
 
 public class Order {
 
+    private static final double VAT_RATE = 0.20;
+
     private final List<OrderItem> items;
     private final Customer customer;
 
@@ -33,7 +35,7 @@ public class Order {
     }
 
     private static double calculateTax(double taxableAmount) {
-        return taxableAmount * 0.20;
+        return taxableAmount * VAT_RATE;
     }
 
     private double calculateSubtotal() {
