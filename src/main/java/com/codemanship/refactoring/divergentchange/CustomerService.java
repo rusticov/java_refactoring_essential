@@ -3,13 +3,14 @@ package com.codemanship.refactoring.divergentchange;
 public class CustomerService {
 
     private final EmailValidator emailValidator = new EmailValidator();
+    private final CustomerNameFormatter customerNameFormatter = new CustomerNameFormatter();
 
     public boolean isValidEmail(String email) {
         return emailValidator.isValidEmail(email);
     }
 
     public String formatDisplayName(String firstName, String lastName) {
-        return firstName.trim() + " " + lastName.trim().toUpperCase();
+        return customerNameFormatter.formatDisplayName(firstName, lastName);
     }
 
     public int calculateLoyaltyPoints(int numberOfPurchases) {
