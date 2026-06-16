@@ -13,4 +13,11 @@ public class CalculateShippingCostTest {
         ShippingCalculator calculator = new ShippingCalculator();
         assertEquals(2.5, calculator.calculateShipping(1001));
     }
+
+    @Test
+    @DisplayName("given order 1002 when calculating shipping cost then cost is 36.8")
+    void order1002() {
+        ShippingCalculator calculator = new ShippingCalculator();
+        assertEquals(36.8, calculator.calculateShipping(1002));
+    }
 }
