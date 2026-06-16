@@ -20,11 +20,9 @@ public class Order {
 
         double discount = calculateDiscount(subtotal);
 
-        // Tax calculation
         double taxableAmount = subtotal - discount;
         double tax = calculateTax(taxableAmount);
 
-        // Total calculation
         double total = calculateTotal(taxableAmount, tax);
 
         return new OrderSummary(subtotal, discount, tax, total);
