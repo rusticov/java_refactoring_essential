@@ -9,6 +9,10 @@ public class OrderItem {
         this.quantity = quantity;
     }
 
+    double itemSubtotal() {
+        return getPrice() * getQuantity();
+    }
+
     public double getPrice() {
         return price;
     }
