@@ -8,15 +8,14 @@ public class X1 {
         // Iterate from lower bound (q) to upper bound (z)
         for (int i = q; i <= z; i++) {
             // Add square of each number in the range
-            p += n(i);
+            p += square(i);
         }
 
         // Return accumulated sum
         return p;
     }
 
-    static int n(int k) {
-        // Return square of input
+    static int square(int k) {
         return k * k;
     }
 }
