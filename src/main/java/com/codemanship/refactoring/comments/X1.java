@@ -2,11 +2,10 @@ package com.codemanship.refactoring.comments;
 
 public class X1 {
 
-    static int m(int lowerBound, int z) {
+    static int m(int lowerBound, int upperBound) {
         int p = 0;
 
-        // Iterate from lower bound (lowerBound) to upper bound (z)
-        p = sumSquaresBetweenBounds(lowerBound, z, p);
+        p = sumSquaresBetweenBounds(lowerBound, upperBound, p);
 
         // Return accumulated sum
         return p;
