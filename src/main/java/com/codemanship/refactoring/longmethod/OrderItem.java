@@ -9,7 +9,7 @@ public class OrderItem {
         this.quantity = quantity;
     }
 
-    double itemSubtotal() {
+    double subtotal() {
         return getPrice() * getQuantity();
     }
 
