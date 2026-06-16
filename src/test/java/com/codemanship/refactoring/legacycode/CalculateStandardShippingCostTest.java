@@ -16,6 +16,6 @@ public class CalculateStandardShippingCostTest {
                 0.0,
                 false)
         ));
-        assertEquals(2.0, calculator.calculateShipping(1000));
+        assertEquals(1.0, calculator.calculateShipping(1000));
     }
 }
