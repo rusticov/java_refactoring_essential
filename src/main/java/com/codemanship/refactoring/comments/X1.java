@@ -9,11 +9,12 @@ public class X1 {
     }
 
     private static int sumSquaresBetweenBounds(int lowerBound, int upperBound, int p) {
+        int result = 0;
         for (int i = lowerBound; i <= upperBound; i++) {
             // Add square of each number in the range
-            p += square(i);
+            result += square(i);
         }
-        return p;
+        return result;
     }
 
     static int square(int k) {
