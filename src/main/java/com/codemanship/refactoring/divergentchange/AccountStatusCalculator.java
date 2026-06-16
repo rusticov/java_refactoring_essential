@@ -8,7 +8,7 @@ public class AccountStatusCalculator {
 
     public String statusSinceLastLogin(int daysSinceLastLogin) {
         if (daysSinceLastLogin > 365) {
-            return "INACTIVE";
+            return AccountStatus.INACTIVE.name();
         } else if (daysSinceLastLogin > 30) {
             return "DORMANT";
         }
