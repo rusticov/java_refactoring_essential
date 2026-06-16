@@ -10,7 +10,7 @@ public class AccountStatusCalculator {
         if (daysSinceLastLogin > 365) {
             return AccountStatus.INACTIVE.name();
         } else if (daysSinceLastLogin > 30) {
-            return "DORMANT";
+            return AccountStatus.DORMANT.name();
         }
         return "ACTIVE";
     }
