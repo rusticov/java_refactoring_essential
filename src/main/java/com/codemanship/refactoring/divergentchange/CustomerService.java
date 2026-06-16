@@ -19,6 +19,6 @@ public class CustomerService {
     }
 
     public String determineAccountStatus(int daysSinceLastLogin) {
-        return accountStatusCalculator.determineAccountStatus(daysSinceLastLogin);
+        return accountStatusCalculator.statusSinceLastLogin(daysSinceLastLogin);
     }
 }
