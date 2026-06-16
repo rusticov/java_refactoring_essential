@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class X1Test {
 
     @Test
-    void sumOfSquaresBetween7And12() {
+    void given7And12WhenSumOfSquaresThenResultIsSumOfSquareOfEachValueInclusive() {
         int a = 7;
         int b = 12;
 
