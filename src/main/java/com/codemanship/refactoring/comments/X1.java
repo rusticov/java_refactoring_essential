@@ -3,12 +3,9 @@ package com.codemanship.refactoring.comments;
 public class X1 {
 
     static int m(int lowerBound, int upperBound) {
-        int p = 0;
-
-        int result = sumSquaresBetweenBounds(lowerBound, upperBound, p);
 
         // Return accumulated sum
-        return result;
+        return sumSquaresBetweenBounds(lowerBound, upperBound, 0);
     }
 
     private static int sumSquaresBetweenBounds(int q, int z, int p) {
