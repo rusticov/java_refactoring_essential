@@ -8,8 +8,8 @@ public class X1 {
         return sumSquaresBetweenBounds(lowerBound, upperBound, 0);
     }
 
-    private static int sumSquaresBetweenBounds(int q, int z, int p) {
-        for (int i = q; i <= z; i++) {
+    private static int sumSquaresBetweenBounds(int lowerBound, int upperBound, int p) {
+        for (int i = lowerBound; i <= upperBound; i++) {
             // Add square of each number in the range
             p += square(i);
         }
