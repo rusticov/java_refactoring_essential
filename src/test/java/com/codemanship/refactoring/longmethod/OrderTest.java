@@ -21,10 +21,10 @@ class OrderTest {
 
         OrderSummary summary = order.summarise();
 
-        assertEquals(30.0, summary.getSubtotal());
-        assertEquals(0.0, summary.getDiscount());
-        assertEquals(6.0, summary.getTax());
-        assertEquals(36.0, summary.getTotal());
+        assertEquals(30.0, summary.subtotal());
+        assertEquals(0.0, summary.discount());
+        assertEquals(6.0, summary.tax());
+        assertEquals(36.0, summary.total());
     }
 
     @Test
@@ -36,10 +36,10 @@ class OrderTest {
 
         OrderSummary summary = order.summarise();
 
-        assertEquals(50.0, summary.getSubtotal());
-        assertEquals(5.0, summary.getDiscount());
-        assertEquals(9.0, summary.getTax());
-        assertEquals(54.0, summary.getTotal());
+        assertEquals(50.0, summary.subtotal());
+        assertEquals(5.0, summary.discount());
+        assertEquals(9.0, summary.tax());
+        assertEquals(54.0, summary.total());
     }
 
     @Test
@@ -51,10 +51,10 @@ class OrderTest {
 
         OrderSummary summary = order.summarise();
 
-        assertEquals(120.0, summary.getSubtotal());
-        assertEquals(6.0, summary.getDiscount());
-        assertEquals(22.8, summary.getTax());
-        assertEquals(136.8, summary.getTotal());
+        assertEquals(120.0, summary.subtotal());
+        assertEquals(6.0, summary.discount());
+        assertEquals(22.8, summary.tax());
+        assertEquals(136.8, summary.total());
     }
 
     // -------------------------
@@ -98,9 +98,9 @@ class OrderTest {
 
         OrderSummary summary = order.summarise();
 
-        assertEquals(100.0, summary.getSubtotal());
-        assertEquals(0.0, summary.getDiscount());
-        assertEquals(20.0, summary.getTax());
-        assertEquals(120.0, summary.getTotal());
+        assertEquals(100.0, summary.subtotal());
+        assertEquals(0.0, summary.discount());
+        assertEquals(20.0, summary.tax());
+        assertEquals(120.0, summary.total());
     }
 }
