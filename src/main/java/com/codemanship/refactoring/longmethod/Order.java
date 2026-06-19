@@ -30,12 +30,13 @@ public class Order {
         return new OrderSummary(subtotal, discount, tax, total);
     }
 
-    private static double calculateTotal(double taxableAmount, double tax) {
-        return taxableAmount + tax;
-    }
-
-    private static double calculateTax(double taxableAmount) {
-        return taxableAmount * VAT_RATE;
+    private void validateItems() {
+        if (items == null) {
+            throw new IllegalStateException("Items cannot be null");
+        }
+        if (items.isEmpty()) {
+            throw new IllegalStateException("Order must contain items");
+        }
     }
 
     private double calculateSubtotal() {
@@ -46,12 +47,11 @@ public class Order {
         return subtotal;
     }
 
-    private void validateItems() {
-        if (items == null) {
-            throw new IllegalStateException("Items cannot be null");
-        }
-        if (items.isEmpty()) {
-            throw new IllegalStateException("Order must contain items");
-        }
+    private static double calculateTax(double taxableAmount) {
+        return taxableAmount * VAT_RATE;
+    }
+
+    private static double calculateTotal(double taxableAmount, double tax) {
+        return taxableAmount + tax;
     }
 }
