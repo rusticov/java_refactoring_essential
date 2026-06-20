@@ -9,11 +9,17 @@ class Product {
         this.onSale = onSale;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
     public boolean isOnSale() {
         return onSale;
+    }
+
+    public double calculateFinalPrice() {
+        double price = this.price;
+
+        if (isOnSale()) {
+            price = price * 0.8;
+        }
+
+        return price;
     }
 }
