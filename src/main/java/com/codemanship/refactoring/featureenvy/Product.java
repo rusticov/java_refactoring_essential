@@ -13,7 +13,7 @@ class Product {
         return onSale;
     }
 
-    public double calculateFinalPrice() {
+    public double finalPrice() {
         double price = this.price;
 
         if (isOnSale()) {
