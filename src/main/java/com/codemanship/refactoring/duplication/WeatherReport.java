@@ -9,25 +9,29 @@ class WeatherReport {
         for (Forecast forecast : forecasts) {
 
             if (forecast.isMorning()) {
-                String line = "Morning: " + forecast.getTemperature() + "°C, "
+                String label = "Morning: ";
+                String line = label + forecast.getTemperature() + "°C, "
                         + forecast.getCondition() + ", wind " + forecast.getWindSpeed() + "km/h";
                 output.add(line);
             }
 
             if (forecast.isAfternoon()) {
-                String line = "Afternoon: " + forecast.getTemperature() + "°C, "
+                String label = "Afternoon: ";
+                String line = label + forecast.getTemperature() + "°C, "
                         + forecast.getCondition() + ", wind " + forecast.getWindSpeed() + "km/h";
                 output.add(line);
             }
 
             if (forecast.isEvening()) {
-                String line = "Evening: " + forecast.getTemperature() + "°C, "
+                String label = "Evening: ";
+                String line = label + forecast.getTemperature() + "°C, "
                         + forecast.getCondition() + ", wind " + forecast.getWindSpeed() + "km/h";
                 output.add(line);
             }
 
             if (forecast.isNight()) {
-                String line = "Night: " + forecast.getTemperature() + "°C, "
+                String label = "Night: ";
+                String line = label + forecast.getTemperature() + "°C, "
                         + forecast.getCondition() + ", wind " + forecast.getWindSpeed() + "km/h";
                 output.add(line);
             }
