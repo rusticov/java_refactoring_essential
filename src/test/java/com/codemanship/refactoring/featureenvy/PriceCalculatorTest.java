@@ -6,8 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PriceCalculatorTest {
 
-    private final PriceCalculator calculator = new PriceCalculator();
-
     @Test
     void shouldApplyDiscountWhenProductIsOnSale() {
         Product product = new Product(100.0, true);
