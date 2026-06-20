@@ -2,13 +2,13 @@ package com.codemanship.refactoring.duplication;
 
 class Forecast {
 
-    private final String period; // "morning", "afternoon", "evening", "night"
+    private final String periodName; // "morning", "afternoon", "evening", "night"
     private final double temperature;
     private final String condition;
     private final int windSpeed;
 
-    public Forecast(String period, double temperature, String condition, int windSpeed) {
-        this.period = period;
+    public Forecast(String periodName, double temperature, String condition, int windSpeed) {
+        this.periodName = periodName;
         this.temperature = temperature;
         this.condition = condition;
         this.windSpeed = windSpeed;
@@ -27,18 +27,18 @@ class Forecast {
     }
 
     public boolean isMorning() {
-        return "morning".equals(period);
+        return "morning".equals(periodName);
     }
 
     public boolean isAfternoon() {
-        return "afternoon".equals(period);
+        return "afternoon".equals(periodName);
     }
 
     public boolean isEvening() {
-        return "evening".equals(period);
+        return "evening".equals(periodName);
     }
 
     public boolean isNight() {
-        return "night".equals(period);
+        return "night".equals(periodName);
     }
 }
