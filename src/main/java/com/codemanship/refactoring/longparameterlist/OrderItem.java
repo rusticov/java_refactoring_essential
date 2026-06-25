@@ -1,4 +1,4 @@
 package com.codemanship.refactoring.longparameterlist;
 
-public record OrderItem(String orderId, String itemDescription, int quantity) {
+public record OrderItem(String id, String itemDescription, int quantity) {
 }

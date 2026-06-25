@@ -13,7 +13,7 @@ public class Order {
 
     @JsonCreator
     public Order(
-            @JsonProperty("orderId") int orderId,
+            @JsonProperty("id") int orderId,
             @JsonProperty("shippingType") String shippingType,
             @JsonProperty("weightKg") double weightKg,
             @JsonProperty("distanceKm") double distanceKm,
