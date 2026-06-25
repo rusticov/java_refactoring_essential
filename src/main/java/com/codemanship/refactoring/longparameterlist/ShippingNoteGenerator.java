@@ -7,7 +7,7 @@ public class ShippingNoteGenerator {
         Address shippingAddress,
         OrderItem orderItem) {
 
-        String fullName = fullName(customer);
+        String fullName = customer.fullName();
 
         String address = shippingAddress.line1() + ", "
                 + (shippingAddress.line2() != null ? shippingAddress.line2() + ", " : "")
@@ -23,7 +23,4 @@ public class ShippingNoteGenerator {
                 + "Quantity: " + orderItem.quantity();
     }
 
-    private static String fullName(Customer customer) {
-        return customer.firstName() + " " + customer.lastName();
-    }
 }
