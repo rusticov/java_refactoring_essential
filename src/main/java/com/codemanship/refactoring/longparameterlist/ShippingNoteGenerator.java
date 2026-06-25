@@ -9,7 +9,7 @@ public class ShippingNoteGenerator {
 
         String fullName = customer.fullName();
 
-        String address = shippingAddress.formatAddressOnSingleLine();
+        String address = shippingAddress.formatOnSingleLine();
 
         return "SHIPPING NOTE\n"
                 + "Order: " + orderItem.id() + "\n"
