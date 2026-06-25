@@ -15,10 +15,8 @@ class ShippingNoteServiceTest {
 
             new Customer("Jane", "Doe"),
 
-            new Address("12 Baker Street", "Flat 4B", "London", "NW1 6XE", "UK"), "ORD-123",
-                "Wireless Headphones",
-                2
-        );
+            new Address("12 Baker Street", "Flat 4B", "London", "NW1 6XE", "UK"),
+            new OrderItem("ORD-123", "Wireless Headphones", 2));
 
         assertTrue(result.contains("Order: ORD-123"));
         assertTrue(result.contains("Customer: Jane Doe"));
@@ -39,10 +37,8 @@ class ShippingNoteServiceTest {
 
             new Customer("John", "Smith"),
 
-            new Address("1 High Street", "Apt 2", "Manchester", "M1 2AB", "UK"), "ORD-999",
-                "Laptop",
-                1
-        );
+            new Address("1 High Street", "Apt 2", "Manchester", "M1 2AB", "UK"),
+            new OrderItem("ORD-999", "Laptop", 1));
 
         assertTrue(result.contains("Customer: John Smith"));
     }
@@ -54,10 +50,8 @@ class ShippingNoteServiceTest {
 
             new Customer("Alice", "Brown"),
 
-            new Address("50 King Street", "Unit 3", "Birmingham", "B1 1AA", "UK"), "ORD-555",
-                "Tablet",
-                5
-        );
+            new Address("50 King Street", "Unit 3", "Birmingham", "B1 1AA", "UK"),
+            new OrderItem("ORD-555", "Tablet", 5));
 
         assertTrue(result.contains("Order: ORD-555"));
         assertTrue(result.contains("Item: Tablet"));
@@ -71,10 +65,8 @@ class ShippingNoteServiceTest {
 
             new Customer("Emma", "Jones"),
 
-            new Address("99 High Road", "Floor 2", "Leeds", "LS1 4AB", "UK"), "ORD-777",
-                "Monitor",
-                3
-        );
+            new Address("99 High Road", "Floor 2", "Leeds", "LS1 4AB", "UK"),
+            new OrderItem("ORD-777", "Monitor", 3));
 
         assertTrue(result.contains("99 High Road"));
         assertTrue(result.contains("Floor 2"));
@@ -90,10 +82,8 @@ class ShippingNoteServiceTest {
 
             new Customer("Tom", "White"),
 
-            new Address("10 Market Street", "", "Liverpool", "L1 8JQ", "UK"), "ORD-321",
-                "Keyboard",
-                10
-        );
+            new Address("10 Market Street", "", "Liverpool", "L1 8JQ", "UK"),
+            new OrderItem("ORD-321", "Keyboard", 10));
 
         assertTrue(result.contains("Quantity: 10"));
     }
