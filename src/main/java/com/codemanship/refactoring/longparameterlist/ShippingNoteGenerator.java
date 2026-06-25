@@ -3,24 +3,20 @@ package com.codemanship.refactoring.longparameterlist;
 public class ShippingNoteGenerator {
 
     public String generateShippingNote(
-        Customer customer, String addressLine1,
-        String addressLine2,
-        String city,
-        String postcode,
-        String country,
+        Customer customer,
 
-        String orderId,
+        Address address1, String orderId,
         String itemDescription,
         int quantity
     ) {
 
         String fullName = customer.firstName() + " " + customer.lastName();
 
-        String address = addressLine1 + ", "
-                + (addressLine2 != null ? addressLine2 + ", " : "")
-                + city + ", "
-                + postcode + ", "
-                + country;
+        String address = address1.addressLine1() + ", "
+                + (address1.addressLine2() != null ? address1.addressLine2() + ", " : "")
+                + address1.city() + ", "
+                + address1.postcode() + ", "
+                + address1.country();
 
         return "SHIPPING NOTE\n"
                 + "Order: " + orderId + "\n"
