@@ -12,9 +12,7 @@ class ShippingNoteServiceTest {
     void shouldGenerateShippingNoteWithAllInputFields() {
 
         String result = shippingNoteGenerator.generateShippingNote(
-
             new Customer("Jane", "Doe"),
-
             new Address("12 Baker Street", "Flat 4B", "London", "NW1 6XE", "UK"),
             new OrderItem("ORD-123", "Wireless Headphones", 2));
 
@@ -34,9 +32,7 @@ class ShippingNoteServiceTest {
     void shouldIncludeCustomerFullName() {
 
         String result = shippingNoteGenerator.generateShippingNote(
-
             new Customer("John", "Smith"),
-
             new Address("1 High Street", "Apt 2", "Manchester", "M1 2AB", "UK"),
             new OrderItem("ORD-999", "Laptop", 1));
 
@@ -47,9 +43,7 @@ class ShippingNoteServiceTest {
     void shouldIncludeOrderIdAndItemDetails() {
 
         String result = shippingNoteGenerator.generateShippingNote(
-
             new Customer("Alice", "Brown"),
-
             new Address("50 King Street", "Unit 3", "Birmingham", "B1 1AA", "UK"),
             new OrderItem("ORD-555", "Tablet", 5));
 
@@ -62,9 +56,7 @@ class ShippingNoteServiceTest {
     void shouldIncludeFullAddressAcrossAllFields() {
 
         String result = shippingNoteGenerator.generateShippingNote(
-
             new Customer("Emma", "Jones"),
-
             new Address("99 High Road", "Floor 2", "Leeds", "LS1 4AB", "UK"),
             new OrderItem("ORD-777", "Monitor", 3));
 
@@ -79,9 +71,7 @@ class ShippingNoteServiceTest {
     void shouldIncludeQuantityCorrectly() {
 
         String result = shippingNoteGenerator.generateShippingNote(
-
             new Customer("Tom", "White"),
-
             new Address("10 Market Street", "", "Liverpool", "L1 8JQ", "UK"),
             new OrderItem("ORD-321", "Keyboard", 10));
 
