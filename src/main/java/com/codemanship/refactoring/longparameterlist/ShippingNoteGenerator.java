@@ -14,7 +14,7 @@ public class ShippingNoteGenerator {
         int quantity
     ) {
 
-        String fullName = customer.customerFirstName() + " " + customer.customerLastName();
+        String fullName = customer.firstName() + " " + customer.lastName();
 
         String address = addressLine1 + ", "
                 + (addressLine2 != null ? addressLine2 + ", " : "")
