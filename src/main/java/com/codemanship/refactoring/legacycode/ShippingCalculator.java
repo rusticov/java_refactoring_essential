@@ -13,24 +13,16 @@ public class ShippingCalculator {
         try {
             Order order = orders.fetchOrder(orderId);
 
-            switch (order.getShippingType()) {
-
-                case "STANDARD":
-                    return order.getWeightKg() * 0.5;
-
-                case "EXPRESS":
-                    return order.getWeightKg() * 0.8
-                            + order.getDistanceKm() * 0.1;
-
-                case "OVERNIGHT":
-                    return order.getWeightKg() * 1.2 + 25;
-
-                default:
-                    throw new RuntimeException(
-                            "Unknown shipping type: "
-                                    + order.getShippingType()
-                    );
-            }
+            return switch (order.getShippingType()) {
+                case "STANDARD" -> order.getWeightKg() * 0.5;
+                case "EXPRESS" -> order.getWeightKg() * 0.8
+                    + order.getDistanceKm() * 0.1;
+                case "OVERNIGHT" -> order.getWeightKg() * 1.2 + 25;
+                default -> throw new RuntimeException(
+                    "Unknown shipping type: "
+                        + order.getShippingType()
+                );
+            };
 
         } catch (Exception e) {
             System.out.println(e);
