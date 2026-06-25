@@ -12,10 +12,8 @@ class ShippingNoteServiceTest {
     void shouldGenerateShippingNoteWithAllInputFields() {
 
         String result = shippingNoteGenerator.generateShippingNote(
-                "Jane",
-                "Doe",
 
-                "12 Baker Street",
+            new Customer("Jane", "Doe"), "12 Baker Street",
                 "Flat 4B",
                 "London",
                 "NW1 6XE",
@@ -42,10 +40,8 @@ class ShippingNoteServiceTest {
     void shouldIncludeCustomerFullName() {
 
         String result = shippingNoteGenerator.generateShippingNote(
-                "John",
-                "Smith",
 
-                "1 High Street",
+            new Customer("John", "Smith"), "1 High Street",
                 "Apt 2",
                 "Manchester",
                 "M1 2AB",
@@ -63,10 +59,8 @@ class ShippingNoteServiceTest {
     void shouldIncludeOrderIdAndItemDetails() {
 
         String result = shippingNoteGenerator.generateShippingNote(
-                "Alice",
-                "Brown",
 
-                "50 King Street",
+            new Customer("Alice", "Brown"), "50 King Street",
                 "Unit 3",
                 "Birmingham",
                 "B1 1AA",
@@ -86,10 +80,8 @@ class ShippingNoteServiceTest {
     void shouldIncludeFullAddressAcrossAllFields() {
 
         String result = shippingNoteGenerator.generateShippingNote(
-                "Emma",
-                "Jones",
 
-                "99 High Road",
+            new Customer("Emma", "Jones"), "99 High Road",
                 "Floor 2",
                 "Leeds",
                 "LS1 4AB",
@@ -111,10 +103,8 @@ class ShippingNoteServiceTest {
     void shouldIncludeQuantityCorrectly() {
 
         String result = shippingNoteGenerator.generateShippingNote(
-                "Tom",
-                "White",
 
-                "10 Market Street",
+            new Customer("Tom", "White"), "10 Market Street",
                 "",
                 "Liverpool",
                 "L1 8JQ",
