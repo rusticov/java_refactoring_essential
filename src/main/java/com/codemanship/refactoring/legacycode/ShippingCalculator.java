@@ -13,11 +13,13 @@ public class ShippingCalculator {
         try {
             Order order = orders.fetchOrder(orderId);
 
+            double weight = order.getWeightKg();
+
             return switch (order.getShippingType()) {
-                case "STANDARD" -> order.getWeightKg() * 0.5;
-                case "EXPRESS" -> order.getWeightKg() * 0.8
+                case "STANDARD" -> weight * 0.5;
+                case "EXPRESS" -> weight * 0.8
                     + order.getDistanceKm() * 0.1;
-                case "OVERNIGHT" -> order.getWeightKg() * 1.2 + 25;
+                case "OVERNIGHT" -> weight * 1.2 + 25;
                 default -> throw new RuntimeException(
                     "Unknown shipping type: "
                         + order.getShippingType()
