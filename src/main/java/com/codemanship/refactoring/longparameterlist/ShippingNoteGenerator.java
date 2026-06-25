@@ -10,8 +10,8 @@ public class ShippingNoteGenerator {
     ) {
         String fullName = customer.firstName() + " " + customer.lastName();
 
-        String address = shippingAddress.addressLine1() + ", "
-                + (shippingAddress.addressLine2() != null ? shippingAddress.addressLine2() + ", " : "")
+        String address = shippingAddress.line1() + ", "
+                + (shippingAddress.line2() != null ? shippingAddress.line2() + ", " : "")
                 + shippingAddress.city() + ", "
                 + shippingAddress.postcode() + ", "
                 + shippingAddress.country();
