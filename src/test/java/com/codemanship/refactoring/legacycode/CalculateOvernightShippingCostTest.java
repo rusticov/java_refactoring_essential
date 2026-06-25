@@ -27,4 +27,21 @@ public class CalculateOvernightShippingCostTest {
         ShippingCalculator calculator = new ShippingCalculator(orders);
         assertEquals(26.2, calculator.calculateShipping(1000));
     }
+
+    @Test
+    @DisplayName("given weight of 2kg when calculating shipping cost then cost is 27.4")
+    void weightOf2kg() throws IOException, InterruptedException {
+        Orders orders = mock(Orders.class);
+        when(orders.fetchOrder(1000)).thenReturn(
+            new Order(
+                1000,
+                "OVERNIGHT",
+                2.0,
+                0.0,
+                false)
+        );
+
+        ShippingCalculator calculator = new ShippingCalculator(orders);
+        assertEquals(27.4, calculator.calculateShipping(1000));
+    }
 }
