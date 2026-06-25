@@ -9,11 +9,7 @@ public class ShippingNoteGenerator {
 
         String fullName = customer.fullName();
 
-        String address = shippingAddress.line1() + ", "
-                + (shippingAddress.line2() != null ? shippingAddress.line2() + ", " : "")
-                + shippingAddress.city() + ", "
-                + shippingAddress.postcode() + ", "
-                + shippingAddress.country();
+        String address = formatAddressOnSingleLine(shippingAddress);
 
         return "SHIPPING NOTE\n"
                 + "Order: " + orderItem.id() + "\n"
@@ -21,6 +17,14 @@ public class ShippingNoteGenerator {
                 + "Ship To: " + address + "\n"
                 + "Item: " + orderItem.itemDescription() + "\n"
                 + "Quantity: " + orderItem.quantity();
+    }
+
+    private static String formatAddressOnSingleLine(Address shippingAddress) {
+        return shippingAddress.line1() + ", "
+            + (shippingAddress.line2() != null ? shippingAddress.line2() + ", " : "")
+            + shippingAddress.city() + ", "
+            + shippingAddress.postcode() + ", "
+            + shippingAddress.country();
     }
 
 }
