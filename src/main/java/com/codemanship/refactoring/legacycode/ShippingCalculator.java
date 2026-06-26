@@ -20,6 +20,7 @@ public class ShippingCalculator {
                 case "EXPRESS" -> weight * 0.8
                     + order.getDistanceKm() * 0.1;
                 case "OVERNIGHT" -> weight * 1.2 + 25;
+                case "INTERNATIONAL" -> 1.5;
                 default -> throw new RuntimeException(
                     "Unknown shipping type: "
                         + order.getShippingType()
