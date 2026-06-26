@@ -15,9 +15,9 @@ public class CalculateExpressShippingCostTest {
     @DisplayName("given 1kg item over 2km when calculating shipping then cost is 1.0")
     void weightOf1KgOver1Km() throws IOException, InterruptedException {
         Orders orders = mock(Orders.class);
-        when(orders.fetchOrder(1001)).thenReturn(
+        when(orders.fetchOrder(1002)).thenReturn(
             new Order(
-                1001,
+                1002,
                 "EXPRESS",
                 1.0,
                 2.0,
@@ -25,16 +25,16 @@ public class CalculateExpressShippingCostTest {
         );
 
         ShippingCalculator calculator = new ShippingCalculator(orders);
-        assertEquals(1.0, calculator.calculateShipping(1001));
+        assertEquals(1.0, calculator.calculateShipping(1002));
     }
 
     @Test
     @DisplayName("given 2kg item over 14km when calculating shipping then cost is 3.0")
     void weightOf2KgOver14Km() throws IOException, InterruptedException {
         Orders orders = mock(Orders.class);
-        when(orders.fetchOrder(1001)).thenReturn(
+        when(orders.fetchOrder(1002)).thenReturn(
             new Order(
-                1001,
+                1002,
                 "EXPRESS",
                 2.0,
                 14.0,
@@ -42,6 +42,6 @@ public class CalculateExpressShippingCostTest {
         );
 
         ShippingCalculator calculator = new ShippingCalculator(orders);
-        assertEquals(3.0, calculator.calculateShipping(1001));
+        assertEquals(3.0, calculator.calculateShipping(1002));
     }
 }

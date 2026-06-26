@@ -13,9 +13,9 @@ public class CalculateStandardShippingCostTest {
     @Test
     void givenStandardShippingAndWeightIs2KgWhenCalculatingCostThenCostIs1() throws IOException, InterruptedException {
         Orders orders = mock(Orders.class);
-        when(orders.fetchOrder(1000)).thenReturn(
+        when(orders.fetchOrder(1001)).thenReturn(
             new Order(
-                1000,
+                1001,
                 "STANDARD",
                 2.0,
                 0.0,
@@ -23,6 +23,6 @@ public class CalculateStandardShippingCostTest {
         );
 
         ShippingCalculator calculator = new ShippingCalculator(orders);
-        assertEquals(1.0, calculator.calculateShipping(1000));
+        assertEquals(1.0, calculator.calculateShipping(1001));
     }
 }
