@@ -11,20 +11,12 @@ public class ShippingCalculator {
     public double calculateShipping(int orderId) {
         try {
             Order order = orders.fetchOrder(orderId);
-            return createCostStrategy(order.getShippingType()).calculateOrderCost(order);
+            return AvailableShippingCostStrategies.createCostStrategy(order.getShippingType()).
+                calculateOrderCost(order);
         } catch (Exception e) {
             System.out.println(e);
             return -1;
         }
     }
 
-    private ShippingCostStrategy createCostStrategy(String shippingType) {
-        return switch (shippingType) {
-            case "STANDARD" -> new StandardShippingCostStrategy();
-            case "EXPRESS" -> new ExpressShippingCostStrategy();
-            case "OVERNIGHT" -> new OvernightShippingCostStrategy();
-            case "INTERNATIONAL" -> new InternationalShippingCostStrategy();
-            default -> throw new RuntimeException("Unknown shipping type: " + shippingType);
-        };
-    }
 }
