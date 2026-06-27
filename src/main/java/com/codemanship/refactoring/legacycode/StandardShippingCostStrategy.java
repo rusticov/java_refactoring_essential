@@ -4,6 +4,6 @@ public class StandardShippingCostStrategy extends ShippingCostStrategy {
 
     @Override
     public double calculateOrderCost(Order order) {
-        return super.calculateOrderCost(order);
+        return order.getWeightKg() * 0.5;
     }
 }
