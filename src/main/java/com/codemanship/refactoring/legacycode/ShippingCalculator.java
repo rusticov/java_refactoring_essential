@@ -24,7 +24,7 @@ public class ShippingCalculator {
             case "EXPRESS" -> new ExpressShippingCostStrategy();
             case "OVERNIGHT" -> new OvernightShippingCostStrategy();
             case "INTERNATIONAL" -> new InternationalShippingCostStrategy();
-            default -> new ShippingCostStrategy();
+            default -> throw new RuntimeException("Unknown shipping type: " + shippingType);
         };
     }
 }
