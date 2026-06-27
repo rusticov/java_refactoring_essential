@@ -1,7 +1,7 @@
 package com.codemanship.refactoring.legacycode;
 
 public class AvailableShippingCostStrategies {
-    static ShippingCostStrategy createCostStrategy(String shippingType) {
+    static ShippingCostStrategy forShippingType(String shippingType) {
         return switch (shippingType) {
             case "STANDARD" -> new StandardShippingCostStrategy();
             case "EXPRESS" -> new ExpressShippingCostStrategy();

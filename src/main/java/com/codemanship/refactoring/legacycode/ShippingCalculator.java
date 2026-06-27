@@ -11,7 +11,7 @@ public class ShippingCalculator {
     public double calculateShipping(int orderId) {
         try {
             Order order = orders.fetchOrder(orderId);
-            return AvailableShippingCostStrategies.createCostStrategy(order.getShippingType()).
+            return AvailableShippingCostStrategies.forShippingType(order.getShippingType()).
                 calculateOrderCost(order);
         } catch (Exception e) {
             System.out.println(e);
