@@ -19,12 +19,10 @@ public class ShippingCalculator {
     }
 
     private ShippingCostStrategy createCostStrategy(String shippingType) {
-        if (shippingType.equals("STANDARD")) {
-            return new StandardShippingCostStrategy();
-        }
-        if (shippingType.equals("EXPRESS")) {
-            return new ExpressShippingCostStrategy();
-        }
-        return new ShippingCostStrategy();
+        return switch (shippingType) {
+            case "STANDARD" -> new StandardShippingCostStrategy();
+            case "EXPRESS" -> new ExpressShippingCostStrategy();
+            default -> new ShippingCostStrategy();
+        };
     }
 }
