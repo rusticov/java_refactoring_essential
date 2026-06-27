@@ -22,6 +22,9 @@ public class ShippingCalculator {
         if (shippingType.equals("STANDARD")) {
             return new StandardShippingCostStrategy();
         }
+        if (shippingType.equals("EXPRESS")) {
+            return new ExpressShippingCostStrategy();
+        }
         return new ShippingCostStrategy();
     }
 }
