@@ -1,4 +1,4 @@
-package com.codemanship.refactoring.legacycode;
+package com.codemanship.refactoring.legacycode.costStrategies;
 
 import java.util.Map;
 
@@ -11,7 +11,7 @@ public class AvailableShippingCostStrategies {
             "INTERNATIONAL", new InternationalShippingCostStrategy()
     );
 
-    static ShippingCostStrategy forShippingType(String shippingType) {
+    public static ShippingCostStrategy forShippingType(String shippingType) {
         if (availableStrategies.containsKey(shippingType)) {
             return availableStrategies.get(shippingType);
         }

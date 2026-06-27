@@ -1,5 +1,7 @@
 package com.codemanship.refactoring.legacycode;
 
+import com.codemanship.refactoring.legacycode.costStrategies.AvailableShippingCostStrategies;
+
 public class ShippingCalculator {
 
     private final Orders orders;
