@@ -1,7 +1,7 @@
 package com.codemanship.refactoring.legacycode;
 
 public class ShippingCostStrategy {
-    protected double calculateOrderCost(Order order) {
+    public double calculateOrderCost(Order order) {
         return switch (order.getShippingType()) {
             case "STANDARD" -> order.getWeightKg() * 0.5;
             case "EXPRESS" -> order.getWeightKg() * 0.8

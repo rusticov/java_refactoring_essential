@@ -19,6 +19,9 @@ public class ShippingCalculator {
     }
 
     private ShippingCostStrategy createCostStrategy(String shippingType) {
+        if (shippingType.equals("STANDARD")) {
+            return new StandardShippingCostStrategy();
+        }
         return new ShippingCostStrategy();
     }
 }
