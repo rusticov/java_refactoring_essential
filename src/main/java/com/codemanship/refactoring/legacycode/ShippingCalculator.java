@@ -23,6 +23,7 @@ public class ShippingCalculator {
             case "STANDARD" -> new StandardShippingCostStrategy();
             case "EXPRESS" -> new ExpressShippingCostStrategy();
             case "OVERNIGHT" -> new OvernightShippingCostStrategy();
+            case "INTERNATIONAL" -> new InternationalShippingCostStrategy();
             default -> new ShippingCostStrategy();
         };
     }
