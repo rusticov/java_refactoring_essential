@@ -12,12 +12,16 @@ public class Customer {
     }
 
     double calculateDiscount(double subtotal) {
-        double discount = 0.0;
         if (isLoyal()) {
-            discount = subtotal * 0.10;
-        } else if (subtotal > 100) {
-            discount = subtotal * 0.05;
+            return subtotal * 0.10;
         }
-        return discount;
+        if (isLargePurchaseDiscount(subtotal)) {
+            return subtotal * 0.05;
+        }
+        return 0.0;
+    }
+
+    private static boolean isLargePurchaseDiscount(double subtotal) {
+        return subtotal > 100;
     }
 }
