@@ -22,6 +22,7 @@ public class ShippingCalculator {
         return switch (shippingType) {
             case "STANDARD" -> new StandardShippingCostStrategy();
             case "EXPRESS" -> new ExpressShippingCostStrategy();
+            case "OVERNIGHT" -> new OvernightShippingCostStrategy();
             default -> new ShippingCostStrategy();
         };
     }
