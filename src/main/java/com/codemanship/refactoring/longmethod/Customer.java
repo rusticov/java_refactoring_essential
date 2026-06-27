@@ -1,6 +1,13 @@
 package com.codemanship.refactoring.longmethod;
 
 public class Customer {
+
+    private static final double LOYALTY_DISCOUNT_PERCENTAGE = 0.10;
+    private static final double LARGE_PURCHASE_DISCOUNT_PERCENTAGE = 0.05;
+
+    private static final double NO_DISCOUNT_AMOUNT = 0.0;
+    private static final double AMOUNT_TO_EXCEED_FOR_LARGE_PURCHASE = 100;
+
     private final boolean loyal;
 
     public Customer(boolean loyal) {
@@ -13,15 +20,15 @@ public class Customer {
 
     double calculateDiscount(double subtotal) {
         if (isLoyal()) {
-            return subtotal * 0.10;
+            return subtotal * LOYALTY_DISCOUNT_PERCENTAGE;
         }
         if (isLargePurchaseDiscount(subtotal)) {
-            return subtotal * 0.05;
+            return subtotal * LARGE_PURCHASE_DISCOUNT_PERCENTAGE;
         }
-        return 0.0;
+        return NO_DISCOUNT_AMOUNT;
     }
 
     private static boolean isLargePurchaseDiscount(double subtotal) {
-        return subtotal > 100;
+        return subtotal > AMOUNT_TO_EXCEED_FOR_LARGE_PURCHASE;
     }
 }
