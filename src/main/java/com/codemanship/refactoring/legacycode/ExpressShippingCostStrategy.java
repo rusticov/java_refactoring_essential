@@ -1,6 +1,6 @@
 package com.codemanship.refactoring.legacycode;
 
-public class ExpressShippingCostStrategy extends ShippingCostStrategy {
+public class ExpressShippingCostStrategy implements ShippingCostStrategy {
 
     @Override
     public double calculateOrderCost(Order order) {
