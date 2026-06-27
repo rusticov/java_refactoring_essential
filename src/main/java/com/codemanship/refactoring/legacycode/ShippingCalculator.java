@@ -1,6 +1,6 @@
 package com.codemanship.refactoring.legacycode;
 
-public class ShippingCalculator extends ShippingCostStrategy {
+public class ShippingCalculator {
 
     private final Orders orders;
 
@@ -11,11 +11,14 @@ public class ShippingCalculator extends ShippingCostStrategy {
     public double calculateShipping(int orderId) {
         try {
             Order order = orders.fetchOrder(orderId);
-            return calculateOrderCost(order);
+            return createCostStrategy(order.getShippingType()).calculateOrderCost(order);
         } catch (Exception e) {
             System.out.println(e);
             return -1;
         }
     }
 
+    private ShippingCostStrategy createCostStrategy(String shippingType) {
+        return new ShippingCostStrategy();
+    }
 }
